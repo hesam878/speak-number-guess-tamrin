@@ -69,7 +69,7 @@ recognition.addEventListener('result', onSpeak);
 recognition.addEventListener('end', () => recognition.start());
   
 }
-
+start();
 $('body').on('click', e => {
   if (e.target.id == 'play-again') {
     start();
