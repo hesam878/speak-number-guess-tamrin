@@ -22,7 +22,7 @@ function checkNumber(msg) {
 
   // Check if valid number
   if (Number.isNaN(num)) {
-    msgEl.html('<div>شماره شما معتبر نیست</div>');
+    msgEl.append('<div>شماره شما معتبر نیست</div>');
     return;
   }
 
@@ -40,9 +40,9 @@ function checkNumber(msg) {
       <button class="play-again" id="play-again">بازی مجدد</button>
     `);
   } else if (num > randomNum) {
-    msgEl.html('<div>عدد پایین تر است</div>');
+    msgEl.append('<div>عدد پایین تر است</div>');
   } else {
-    msgEl.html('<div>عدد بالا تر است</div>');
+    msgEl.append('<div>عدد بالا تر است</div>');
   }
 }
 
