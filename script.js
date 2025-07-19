@@ -1,3 +1,5 @@
+function start() {
+
 const msgEl = $('#msg');
 const randomNum = getRandomNumber();
 console.log('عدد:', randomNum);
@@ -65,9 +67,11 @@ recognition.addEventListener('result', onSpeak);
 
 // End SR service
 recognition.addEventListener('end', () => recognition.start());
+  
+}
 
 $('body').on('click', e => {
   if (e.target.id == 'play-again') {
-    window.location.reload();
+    start();
   }
 });
