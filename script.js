@@ -28,13 +28,13 @@ function checkNumber(msg) {
 
   // Check in range
   if (num > 100 || num < 1) {
-    msgEl.innerHTML += '<div>شماره باید بین 1 تا 100 باشد</div>';
+    msgEl.append('<div>شماره باید بین 1 تا 100 باشد</div>');
     return;
   }
 
   // Check number
   if (num === randomNum) {
-    document.body.html( `
+    $('body').html( `
       <h2>تبریک! شما عدد را حدس زدید!<br><br>
       عدد ${num}</h2>
       <button class="play-again" id="play-again">بازی مجدد</button>
