@@ -11,6 +11,13 @@ function onSpeak(e) {
   writeMessage(msg);
   checkNumber(msg);
 }
+function toEnglishDigits(str) {
+  return str.replace(/[۰-۹]/g, d => '0123456789'[d.charCodeAt(0) - 1776]);
+}
+function toPersianDigits(num) {
+  return num.toString().replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+}
+
 function writeMessage(msg) {
   msgEl.html( `
     <div>عدد شما: </div>
@@ -18,7 +25,8 @@ function writeMessage(msg) {
   `);
 }
 function checkNumber(msg) {
-  const num = +msg;
+  const englishMsg = toEnglishDigits(msg);
+  const num = +englishMsg;
 
   // Check if valid number
   if (Number.isNaN(num)) {
@@ -36,7 +44,7 @@ function checkNumber(msg) {
   if (num === randomNum) {
     $('body').html( `
       <h2>تبریک! شما عدد را حدس زدید!<br><br>
-      عدد ${num}</h2>
+      عدد ${toPersianDigits(num)}</h2>
       <button class="play-again" id="play-again">بازی مجدد</button>
     `);
   } else if (num > randomNum) {
