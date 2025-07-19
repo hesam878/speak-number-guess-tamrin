@@ -7,7 +7,7 @@ let recognition = new window.SpeechRecognition();
 recognition.start();
 function onSpeak(e) {
   const msg = e.results[0][0].transcript;
-
+console.log('عدد گفته شده:', msg);
   writeMessage(msg);
   checkNumber(msg);
 }
